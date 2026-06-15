@@ -56,7 +56,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-base-300 py-5 text-center">
+      <div className="border-t border-base-200 py-5 text-center">
         <p>© {new Date().getFullYear()} PetNest. All rights reserved.</p>
       </div>
     </footer>

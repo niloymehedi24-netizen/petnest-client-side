@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center shadow-md px-4 lg:px-5 bg-white dark:bg-slate-900">
+    <nav className="flex justify-between items-center shadow-md px-4 lg:px-5 bg-white">
       {/* Left */}
       <div>
         <Link href="/" className="flex items-center">
@@ -17,7 +17,7 @@ const Navbar = () => {
 
       {/* Center */}
       <div className="hidden lg:flex">
-        <ul className="flex gap-6 font-medium text-gray-700 dark:text-gray-200">
+        <ul className="flex gap-6 font-medium text-black">
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -35,7 +35,7 @@ const Navbar = () => {
 
       {/* Right */}
       <div className="flex items-center gap-4">
-        <ul className="hidden lg:flex gap-4 font-medium text-gray-700 dark:text-gray-200">
+        <ul className="hidden lg:flex gap-4 font-medium text-black">
           <li>
             <Link href="/profile">Profile</Link>
           </li>

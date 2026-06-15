@@ -1,12 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center rounded-xl shadow-md px-4 lg:px-5 bg-white dark:bg-slate-900">
+    <nav className="flex justify-between items-center shadow-md px-4 lg:px-5 bg-white dark:bg-slate-900">
       {/* Left */}
       <div>
         <Link href="/" className="flex items-center">
@@ -38,8 +35,6 @@ const Navbar = () => {
 
       {/* Right */}
       <div className="flex items-center gap-4">
-        <ThemeToggle />
-
         <ul className="hidden lg:flex gap-4 font-medium text-gray-700 dark:text-gray-200">
           <li>
             <Link href="/profile">Profile</Link>

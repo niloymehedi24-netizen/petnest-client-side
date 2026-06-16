@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button, Input, TextArea } from "@heroui/react";
 import { EditModal } from "@/components/EditModal";
+import { DeleteAlert } from "@/components/DeleteAlert";
 
 const PetDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -13,7 +14,10 @@ const PetDetailsPage = async ({ params }) => {
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-10">
-      <EditModal pet={pet}></EditModal>
+      <div className="flex justify-end items-center">
+        <EditModal pet={pet}></EditModal>
+        <DeleteAlert pet={pet}></DeleteAlert>
+      </div>
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Pet Details */}
         <div className="lg:col-span-2 space-y-6">
@@ -85,7 +89,7 @@ const PetDetailsPage = async ({ params }) => {
             </p>
 
             <form className="space-y-5">
-              <Input label="Pet Name" value={pet.name} />
+              <Input label="Pet Name" value={pet?.name} />
 
               <Input label="User Name" />
 
@@ -106,7 +110,7 @@ const PetDetailsPage = async ({ params }) => {
                 type="submit"
                 color="primary"
                 size="lg"
-                className="w-full bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] text-white"
+                className="w-full bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] text-white rounded-xl"
               >
                 Adopt Now
               </Button>

@@ -1,6 +1,5 @@
 "use client";
 
-import { Envelope } from "@gravity-ui/icons";
 import {
   Button,
   FieldError,
@@ -35,27 +34,27 @@ export function EditModal({ pet }) {
     const pet = Object.fromEntries(formData.entries());
     console.log(pet);
 
-    // const res = await fetch("http://localhost:8000/pet", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(pet),
-    // });
+    const res = await fetch(`http://localhost:8000/pet/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(pet),
+    });
 
-    // const data = await res.json();
+    const data = await res.json();
+    console.log(data);
   };
   return (
     <Modal>
-      <div className="flex justify-end">
-        <Button
-          className={
-            "rounded-xl bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] text-white m-5"
-          }
-        >
-          <SquarePen></SquarePen>Edit
-        </Button>
-      </div>
+      <Button
+        className={
+          "rounded-xl bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] text-white m-5"
+        }
+      >
+        <SquarePen></SquarePen>Edit
+      </Button>
+
       <Modal.Backdrop>
         <Modal.Container placement="auto">
           <Modal.Dialog className="sm:max-w-xl">

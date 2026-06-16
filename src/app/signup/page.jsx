@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button, Input } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const SignUpPage = () => {
   const [loading, setLoading] = useState(false);
@@ -72,6 +73,17 @@ const SignUpPage = () => {
       toast.error(err.message || "Something went wrong");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/",
+      });
+    } catch (err) {
+      toast.error("Google login failed");
     }
   };
 
@@ -149,10 +161,25 @@ const SignUpPage = () => {
 
             <Button
               type="submit"
-              className="w-full bg-linear-to-r from-[#D98A52] via-[#8AB56E] text-white"
+              className="w-full bg-linear-to-r from-[#D98A52] via-[#8AB56E] text-white rounded-xl"
               disabled={loading}
             >
               {loading ? "Creating Account..." : "Create Account"}
+            </Button>
+            {/* Divider */}
+            <div className="flex items-center gap-4 my-6">
+              <div className="flex-1 h-px bg-gray-300 dark:bg-gray-700" />
+              <span className="text-sm text-gray-500">OR</span>
+              <div className="flex-1 h-px bg-gray-300 dark:bg-gray-700" />
+            </div>
+            {/* Google Login */}
+            <Button
+              variant="bordered"
+              className="w-full flex items-center justify-center gap-3 py-6 font-medium hover:bg-default-100 transition-all duration-300"
+              onClick={handleGoogleLogin}
+            >
+              <FcGoogle className="text-xl" />
+              Continue with Google
             </Button>
           </form>
 

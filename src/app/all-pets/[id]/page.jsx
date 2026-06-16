@@ -89,18 +89,17 @@ const PetDetailsPage = async ({ params }) => {
             </p>
 
             <form className="space-y-5">
-              <Input label="Pet Name" value={pet?.name} />
+              <Input label="Pet Name" defaultValue={pet?.name} readOnly />
 
               <Input label="User Name" />
 
               <Input label="User Email" />
 
-              <Input type="date" label="Pickup Date" isRequired />
+              <Input type="date" label="Pickup Date" required />
 
               <TextArea
                 label="Message"
                 placeholder="Tell us why you would like to adopt this pet..."
-                minRows={4}
               />
 
               {/* Hidden Status */}

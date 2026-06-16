@@ -50,7 +50,11 @@ const Navbar = () => {
             {/* Avatar */}
             <div className="relative group">
               <Avatar>
-                <Avatar.Image alt="John Doe" src={session?.user.image} />
+                <Avatar.Image
+                  referrerPolicy="no-referrer"
+                  alt="John Doe"
+                  src={session?.user.image}
+                />
                 <Avatar.Fallback>{session.user.name}</Avatar.Fallback>
               </Avatar>
 

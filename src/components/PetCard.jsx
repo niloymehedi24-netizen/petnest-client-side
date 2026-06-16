@@ -82,7 +82,7 @@ const PetCard = ({ pet }) => {
 
         {/* Button */}
         <Link href={`/all-pets/${_id}`}>
-          <button className="w-full rounded-xl bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-lg">
+          <button className="w-full rounded-xl bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-lg cursor-pointer">
             View Details →
           </button>
         </Link>

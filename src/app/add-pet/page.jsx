@@ -13,11 +13,20 @@ import {
 import React from "react";
 
 const AddPetPage = () => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const pet = Object.fromEntries(formData.entries());
-    console.log(pet);
+
+    const res = await fetch("http://localhost:8000/pet", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(pet),
+    });
+
+    const data = await res.json();
   };
 
   return (

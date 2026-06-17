@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button, Input, TextArea } from "@heroui/react";
 import { EditModal } from "@/components/EditModal";
 import { DeleteAlert } from "@/components/DeleteAlert";
+import AdoptionForm from "@/components/AdoptionForm";
 
 const PetDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -88,32 +89,7 @@ const PetDetailsPage = async ({ params }) => {
               Fill out the form to submit your adoption request.
             </p>
 
-            <form className="space-y-5">
-              <Input label="Pet Name" defaultValue={pet?.name} readOnly />
-
-              <Input label="User Name" />
-
-              <Input label="User Email" />
-
-              <Input type="date" label="Pickup Date" required />
-
-              <TextArea
-                label="Message"
-                placeholder="Tell us why you would like to adopt this pet..."
-              />
-
-              {/* Hidden Status */}
-              <input type="hidden" name="status" value="pending" />
-
-              <Button
-                type="submit"
-                color="primary"
-                size="lg"
-                className="w-full bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] text-white rounded-xl"
-              >
-                Adopt Now
-              </Button>
-            </form>
+            <AdoptionForm pet={pet}></AdoptionForm>
 
             <div className="mt-6 rounded-2xl bg-cyan-50 dark:bg-cyan-950 p-4">
               <p className="text-sm">

@@ -3,13 +3,20 @@
 import { AlertDialog, Button } from "@heroui/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 const CancelRequest = ({ id }) => {
   const router = useRouter();
 
   const handleCancel = async () => {
+    const { data } = await authClient.token();
+
     const res = await fetch(`http://localhost:8000/adopt/${id}`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${data.token}`,
+      },
     });
 
     if (res.ok) {

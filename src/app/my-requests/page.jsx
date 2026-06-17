@@ -10,10 +10,17 @@ const MyRequestsPage = async () => {
     headers: await headers(),
   });
 
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
+
   const user = session?.user;
 
   const res = await fetch(`http://localhost:8000/adopt/user/${user?.id}`, {
     cache: "no-store",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
   });
 
   const data = await res.json();

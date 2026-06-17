@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   FieldError,
@@ -32,12 +33,14 @@ export function EditModal({ pet }) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const pet = Object.fromEntries(formData.entries());
-    console.log(pet);
+
+    const { data: tokenData } = await authClient.token();
 
     const res = await fetch(`http://localhost:8000/pet/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${tokenData?.token}`,
       },
       body: JSON.stringify(pet),
     });

@@ -36,6 +36,8 @@ const AdoptionForm = ({ pet }) => {
       createdAt: new Date(),
     };
 
+    const { data: tokenData } = await authClient.token();
+
     try {
       const toastId = toast.loading("Submitting adoption request...");
 
@@ -43,6 +45,7 @@ const AdoptionForm = ({ pet }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          authorization: `Bearer ${tokenData?.token}`,
         },
         body: JSON.stringify(adoptionData),
       });

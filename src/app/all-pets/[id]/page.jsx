@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button, Input, TextArea } from "@heroui/react";
 import { EditModal } from "@/components/EditModal";
 import { DeleteAlert } from "@/components/DeleteAlert";
 import AdoptionForm from "@/components/AdoptionForm";

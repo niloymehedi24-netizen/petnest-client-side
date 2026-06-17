@@ -6,27 +6,32 @@ import toast from "react-hot-toast";
 
 const AdoptionForm = ({ pet }) => {
   const { data: session } = authClient.useSession();
-  //   const user = session?.user;
+  const user = session?.user;
 
   const handleAdopt = async (e) => {
     e.preventDefault();
 
-    // if (!session?.user) {
-    //   toast.error("Please login first");
-    //   return;
-    // }
+    if (!session?.user) {
+      toast.error("Please login first");
+      return;
+    }
 
     const form = e.target;
 
     const adoptionData = {
-      petId: pet._id,
-      petName: pet.name,
-      petImage: pet.imageUrl,
-      userName: session.user.name,
-      userEmail: session.user.email,
-      userPhoto: session.user.image,
+      petId: pet?._id,
+      petName: pet?.name,
+      petImage: pet?.imageUrl,
+
+      userId: session?.user?.id,
+
+      userName: session?.user?.name,
+      userEmail: session?.user?.email,
+      userPhoto: session?.user?.image,
+
       pickupDate: form.pickupDate.value,
       message: form.message.value,
+
       status: "pending",
       createdAt: new Date(),
     };
@@ -64,7 +69,7 @@ const AdoptionForm = ({ pet }) => {
 
   return (
     <form onSubmit={handleAdopt} className="space-y-5">
-      <Input label="Pet Name" defaultValue={pet.name} />
+      <Input label="Pet Name" defaultValue={pet?.name} />
 
       <Input
         label="User Name"

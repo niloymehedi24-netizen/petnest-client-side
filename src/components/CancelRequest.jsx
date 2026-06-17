@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@heroui/react";
+import { AlertDialog, Button } from "@heroui/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
@@ -21,14 +21,39 @@ const CancelRequest = ({ id }) => {
   };
 
   return (
-    <Button
-      color="danger"
-      variant="outline"
-      onClick={handleCancel}
-      className={"rounded-xl text-red-500"}
-    >
-      Cancel Request
-    </Button>
+    <AlertDialog>
+      <Button
+        onClick={handleCancel}
+        variant="outline"
+        className={"rounded-xl text-red-500"}
+      >
+        Delete Request
+      </Button>
+      <AlertDialog.Backdrop>
+        <AlertDialog.Container>
+          <AlertDialog.Dialog className="sm:max-w-100">
+            <AlertDialog.CloseTrigger />
+            <AlertDialog.Header>
+              <AlertDialog.Icon status="danger" />
+              <AlertDialog.Heading>
+                Delete Request permanently?
+              </AlertDialog.Heading>
+            </AlertDialog.Header>
+            <AlertDialog.Body>
+              <p>This action cannot be undone.</p>
+            </AlertDialog.Body>
+            <AlertDialog.Footer>
+              <Button slot="close" variant="tertiary">
+                Cancel
+              </Button>
+              <Button slot="close" variant="danger" className={"rounded-xl"}>
+                Delete
+              </Button>
+            </AlertDialog.Footer>
+          </AlertDialog.Dialog>
+        </AlertDialog.Container>
+      </AlertDialog.Backdrop>
+    </AlertDialog>
   );
 };
 

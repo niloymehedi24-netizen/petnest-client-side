@@ -2,12 +2,21 @@ import Image from "next/image";
 import { EditModal } from "@/components/EditModal";
 import { DeleteAlert } from "@/components/DeleteAlert";
 import AdoptionForm from "@/components/AdoptionForm";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
 
 const PetDetailsPage = async ({ params }) => {
   const { id } = await params;
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
+  console.log(token);
 
   const res = await fetch(`http://localhost:8000/pet/${id}`, {
     cache: "no-store",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
   });
 
   const pet = await res.json();

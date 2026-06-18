@@ -2,9 +2,9 @@ import PetCard from "@/components/PetCard";
 import React from "react";
 
 const AllPetsPage = async () => {
-  const res = await fetch("http://localhost:8000/pet");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet`);
   const pets = await res.json();
-  console.log(pets);
+
   return (
     <div>
       <section className="py-16 max-w-7xl mx-auto">

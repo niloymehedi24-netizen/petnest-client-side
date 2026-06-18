@@ -16,12 +16,15 @@ const MyRequestsPage = async () => {
 
   const user = session?.user;
 
-  const res = await fetch(`http://localhost:8000/adopt/user/${user?.id}`, {
-    cache: "no-store",
-    headers: {
-      authorization: `Bearer ${token}`,
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/adopt/user/${user?.id}`,
+    {
+      cache: "no-store",
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   const data = await res.json();
   console.log(data);

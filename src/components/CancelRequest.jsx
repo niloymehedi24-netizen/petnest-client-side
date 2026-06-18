@@ -11,13 +11,16 @@ const CancelRequest = ({ id }) => {
   const handleCancel = async () => {
     const { data } = await authClient.token();
 
-    const res = await fetch(`http://localhost:8000/adopt/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${data.token}`,
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/adopt/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${data.token}`,
+        },
       },
-    });
+    );
 
     if (res.ok) {
       toast.success("Request cancelled");

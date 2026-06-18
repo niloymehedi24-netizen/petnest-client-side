@@ -41,7 +41,7 @@ const AdoptionForm = ({ pet }) => {
     try {
       const toastId = toast.loading("Submitting adoption request...");
 
-      const res = await fetch("http://localhost:8000/adopt", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/adopt`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

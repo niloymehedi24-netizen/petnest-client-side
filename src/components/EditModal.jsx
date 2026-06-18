@@ -36,14 +36,17 @@ export function EditModal({ pet }) {
 
     const { data: tokenData } = await authClient.token();
 
-    const res = await fetch(`http://localhost:8000/pet/${_id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${tokenData?.token}`,
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/pet/${_id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${tokenData?.token}`,
+        },
+        body: JSON.stringify(pet),
       },
-      body: JSON.stringify(pet),
-    });
+    );
 
     const data = await res.json();
     console.log(data);

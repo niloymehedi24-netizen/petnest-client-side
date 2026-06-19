@@ -24,7 +24,7 @@ const Banner = () => {
             care.
           </p>
 
-          <Button className="flex gap-4 border rounded-xl px-8 py-3 bg-primary hover:bg-primary-focus transition">
+          <Button className="flex gap-4 border rounded-xl px-8 py-3 bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] hover:bg-primary-focus transition">
             <Link
               href="/all-pets"
               className="btn btn-primary rounded-full px-8"

@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐾 PetNest
 
-## Getting Started
+PetNest is a modern pet adoption platform where users can browse available pets, view detailed information, and submit adoption requests. The application provides a smooth user experience with secure authentication, responsive design, and an intuitive interface for pet lovers.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 https://petnest-sand.vercel.app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Purpose
 
-## Learn More
+The goal of **PetNest** is to simplify the pet adoption process by connecting potential adopters with available pets. Users can securely create an account, explore pets, submit adoption requests, and manage their requests from a personalized dashboard.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🔐 Secure Authentication using **Better Auth** (Email/Password & Google Sign In)
+- 🐶 Browse all available pets with detailed information
+- 🔍 Search and filter pets by name and species
+- ❤️ Submit pet adoption requests with pickup date and personalized message
+- 📋 Manage adoption requests from the **My Requests** page
+- ✏️ Update pet information using an edit modal
+- 🗑️ Delete pets and cancel adoption requests
+- 📱 Fully responsive design for mobile, tablet, and desktop
+- 🌙 Modern UI built with HeroUI and Tailwind CSS
+- ⚡ Fast performance using Next.js App Router
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 16
+- React 19
+- Tailwind CSS 4
+- HeroUI
+- Better Auth
+- MongoDB
+- Node.js
+- Express.js
+
+---
+
+## 📦 NPM Packages Used
+
+### Frontend
+
+- next
+- react
+- react-dom
+- @heroui/react
+- @heroui/styles
+- better-auth
+- @better-auth/mongo-adapter
+- next-themes
+- react-hot-toast
+- react-icons
+- lucide-react
+- mongodb
+
+### Development
+
+- tailwindcss
+- @tailwindcss/postcss
+- eslint
+- eslint-config-next
+- babel-plugin-react-compiler
+
+---
+
+## 👨‍💻 Author
+
+**Mehedi Hasan Niloy**
+
+GitHub: https://github.com/niloymehedi24-netizen
+
+---
+
+## 📄 License
+
+This project is developed for educational purposes.

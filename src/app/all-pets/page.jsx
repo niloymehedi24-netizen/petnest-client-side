@@ -2,8 +2,10 @@ import PetCard from "@/components/PetCard";
 import Link from "next/link";
 
 const AllPetsPage = async ({ searchParams }) => {
-  const search = searchParams?.search || "";
-  const species = searchParams?.species || "";
+  const params = await searchParams;
+
+  const search = params.search || "";
+  const species = params.species || "";
 
   const query = new URLSearchParams();
 

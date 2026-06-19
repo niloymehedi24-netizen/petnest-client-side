@@ -18,7 +18,7 @@ const PetCard = ({ pet }) => {
   } = pet;
 
   return (
-    <div className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900">
+    <div className="group overflow-hidden max-w-xl rounded-3xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900">
       {/* Image */}
       <div className="relative h-64 overflow-hidden">
         <Image

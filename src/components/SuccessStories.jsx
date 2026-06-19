@@ -19,7 +19,7 @@ const stories = [
 
 const SuccessStories = () => {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-linear-to-br from-cyan-100 to-amber-100">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-14">
           <h2 className="text-5xl font-bold bg-linear-to-r from-[#D98A52] via-[#8AB56E] to-[#4F7180] bg-clip-text text-transparent">
